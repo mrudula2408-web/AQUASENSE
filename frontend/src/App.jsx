@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Dashboard from './pages/Dashboard';
 import RainfallPrediction from './pages/RainfallPrediction';
@@ -8,7 +8,7 @@ import TankManagement from './pages/TankManagement';
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <div className="app-shell">
         <Navbar />
         <main className="main-content">
@@ -31,7 +31,7 @@ function App() {
           </div>
         </footer>
       </div>
-    </BrowserRouter>
+    </Router>
   );
 }
 
