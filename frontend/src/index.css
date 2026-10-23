@@ -342,6 +342,28 @@ body {
   .stats-grid {
     grid-template-columns: 1fr;
   }
+  .main-content {
+    padding: 1rem 0.85rem 3rem 0.85rem;
+  }
+  .navbar-inner {
+    padding: 0.75rem 0.85rem;
+  }
+  .nav-links {
+    overflow-x: auto;
+    width: 100%;
+    justify-content: flex-start;
+    padding: 4px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .nav-item {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.85rem;
+    flex-shrink: 0;
+  }
+  .tank-visual-container {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
 }
 
 .stat-card {
