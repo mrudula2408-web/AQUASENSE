@@ -1,0 +1,157 @@
+{
+  "status": "trained",
+  "model_version": "1.0",
+  "dataset_source": "Official IMD 0.25\u00b0 Gridded Rainfall (Hyderabad: Lat 17.5\u00b0 N, Lon 78.5\u00b0 E)",
+  "features": [
+    "month",
+    "sin_month",
+    "cos_month",
+    "lag_1",
+    "lag_2",
+    "lag_3",
+    "lag_12",
+    "rolling_3"
+  ],
+  "split_ratio": "80/20 chronological",
+  "train_samples": 86,
+  "test_samples": 22,
+  "train_period": "2016-01 to 2023-02",
+  "test_period": "2023-03 to 2024-12",
+  "thresholds": {
+    "dry_threshold_mm": 6.59,
+    "heavy_threshold_mm": 93.41,
+    "formula": "33.3rd and 66.6th percentiles of historical training distribution"
+  },
+  "regression": {
+    "model": "RandomForestRegressor",
+    "parameters": {
+      "n_estimators": 100,
+      "max_depth": 5,
+      "random_state": 42
+    },
+    "mae_mm": 45.82,
+    "rmse_mm": 60.42,
+    "r2_score": 0.542,
+    "test_actual_mean_mm": 79.54,
+    "test_predicted_mean_mm": 91.05
+  },
+  "classification": {
+    "model": "GaussianNB",
+    "classes": [
+      "Dry",
+      "Normal",
+      "Heavy"
+    ],
+    "accuracy": 0.5455,
+    "report": {
+      "Dry": {
+        "precision": 0.42857142857142855,
+        "recall": 0.5,
+        "f1-score": 0.46153846153846156,
+        "support": 6.0
+      },
+      "Heavy": {
+        "precision": 0.625,
+        "recall": 0.8333333333333334,
+        "f1-score": 0.7142857142857143,
+        "support": 6.0
+      },
+      "Normal": {
+        "precision": 0.5714285714285714,
+        "recall": 0.4,
+        "f1-score": 0.47058823529411764,
+        "support": 10.0
+      },
+      "accuracy": 0.5454545454545454,
+      "macro avg": {
+        "precision": 0.5416666666666666,
+        "recall": 0.5777777777777778,
+        "f1-score": 0.5488041370394311,
+        "support": 22.0
+      },
+      "weighted avg": {
+        "precision": 0.547077922077922,
+        "recall": 0.5454545454545454,
+        "f1-score": 0.5345830639948287,
+        "support": 22.0
+      }
+    }
+  },
+  "climatology_monthly_mean_mm": {
+    "1": 2.94,
+    "2": 0.85,
+    "3": 9.91,
+    "4": 30.6,
+    "5": 51.73,
+    "6": 127.41,
+    "7": 179.71,
+    "8": 146.68,
+    "9": 244.06,
+    "10": 111.07,
+    "11": 5.76,
+    "12": 9.36
+  },
+  "recent_12_months": [
+    {
+      "year_month": "2024-01",
+      "month": 1,
+      "rainfall_mm": 0.0
+    },
+    {
+      "year_month": "2024-02",
+      "month": 2,
+      "rainfall_mm": 0.0
+    },
+    {
+      "year_month": "2024-03",
+      "month": 3,
+      "rainfall_mm": 1.39
+    },
+    {
+      "year_month": "2024-04",
+      "month": 4,
+      "rainfall_mm": 3.3000000000000003
+    },
+    {
+      "year_month": "2024-05",
+      "month": 5,
+      "rainfall_mm": 78.41
+    },
+    {
+      "year_month": "2024-06",
+      "month": 6,
+      "rainfall_mm": 123.23
+    },
+    {
+      "year_month": "2024-07",
+      "month": 7,
+      "rainfall_mm": 134.23000000000002
+    },
+    {
+      "year_month": "2024-08",
+      "month": 8,
+      "rainfall_mm": 221.64000000000001
+    },
+    {
+      "year_month": "2024-09",
+      "month": 9,
+      "rainfall_mm": 218.74
+    },
+    {
+      "year_month": "2024-10",
+      "month": 10,
+      "rainfall_mm": 57.57
+    },
+    {
+      "year_month": "2024-11",
+      "month": 11,
+      "rainfall_mm": 2.54
+    },
+    {
+      "year_month": "2024-12",
+      "month": 12,
+      "rainfall_mm": 17.830000000000002
+    }
+  ],
+  "limitations": "These ML models provide statistical forecasts based strictly on historical rainfall patterns, seasonal calendar indicators, and lagged observations. They do not simulate dynamic atmospheric physics, cloud thermodynamics, or satellite radar imagery. Predictions should be interpreted as climatological estimates for rainwater harvesting planning, not as official short-term weather forecasts."
+}

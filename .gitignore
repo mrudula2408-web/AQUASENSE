@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+backend/venv/
+backend/.pytest_cache/
+*.db
+backend/aquasense.db
+backend/.env
+.env
+
+# IMD Raw NetCDF files (large binaries, can be redownloaded)
+backend/data/raw/*.nc
+
+# Node / Frontend
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+.DS_Store
+Thumbs.db
